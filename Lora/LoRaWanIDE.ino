@@ -3,30 +3,20 @@
 
 #include <RadioLib.h>
 
-// SX1262 instance with your board's pinout
+// init module
 SX1262 radio = new Module(8, 14, 12, 13);
 
-// Select the region band (EU868 here)
+// Select the region band
 LoRaWANNode node(&radio, &EU868);
 
 
-
-// ---------- OTAA credentials (from TTS) ----------
-// LoRaWAN 1.0.x uses AppKey only; set NwkKey to NULL.
-// For LoRaWAN 1.1.x, provide both AppKey and NwkKey, and set your device
-// in TTS to LoRaWAN 1.1 with matching keys.
-
-uint64_t joinEUI = 0x1234561234561234;        // AppEUI/JoinEUI (MSB), replace
-uint64_t devEUI  = 0x70B3D57ED8004CE5;        // DevEUI (MSB), replace
+uint64_t joinEUI = 0x1234561234561234;        // AppEUI/JoinEUI
+uint64_t devEUI  = 0x70B3D57ED8004CE5;        // DevEUI
 
 uint8_t  appKey[16] = {
   0x1D, 0x02, 0x21, 0x86, 0xE3, 0x6D, 0xDD, 0x65, 0x69, 0x17, 0x95, 0xFE, 0x17, 0xB7, 0xE6, 0xC9
 };
 
-
-
-
-// ------------------------------------------------
 
 void setup() {
   Serial.begin(115200); while(!Serial) {}
@@ -66,7 +56,7 @@ void loop() {
     Serial.print(" gw="); Serial.println((int)gws);
   }
 
-  // Respect duty cycle
+  //duty cycle
   uint32_t waitMs = max<uint32_t>(node.timeUntilUplink(), 10000);
   delay(waitMs);
 }

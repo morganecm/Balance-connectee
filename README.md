@@ -7,12 +7,12 @@ L'objectif du projet est de concevoir une balance connectée permettant de peser
 ## Groupe de projet 
 Morgane CAM m1cam@enib.fr 
 
-Reine CHAMES r24chames
+Reine CHAMES r24chames@enib.fr
 
-Zakaria BOUMLINE z3boumli
+Zakaria BOUMLINE z3boumli@enib.fr
 
 Hassan ROUMANI h3rouman@enib.fr
 
 Hussein IBRAHIM h3ibrahi@enib.fr
 
-Aymane BAHSSAIN a3bahssa
+Aymane BAHSSAIN a3bahssa@enib.fr
